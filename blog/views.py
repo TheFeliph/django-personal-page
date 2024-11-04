@@ -1,4 +1,8 @@
+# blog/views.py
+
 from django.shortcuts import render
+from .models import Post  # Supondo que você tenha um modelo Post
 
 def index(request):
-    return render(request, 'blog/index.html')  # ajuste o caminho conforme seu projeto
+    posts = Post.objects.all()  # Obtenha todos os posts do Admin
+    return render(request, 'blog/index.html', {'posts': posts})  # Use 'blog/index.html'

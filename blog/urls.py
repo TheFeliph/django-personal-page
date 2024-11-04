@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import index  # use index em vez de post_view
+from .views import index
 
 urlpatterns = [
-    path('', index, name='index'),  # rota raiz para a view `index`
+    path('', index, name='index'),
 ]

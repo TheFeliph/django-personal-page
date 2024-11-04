@@ -21,5 +21,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),  # Inclua o blog como a URL raiz
+    path('', include('blog.urls')),
 ]

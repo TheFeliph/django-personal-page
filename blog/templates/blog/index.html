@@ -1,9 +1,18 @@
-<!-- blog/templates/blog/index.html -->
-{% extends "blog/base.html" %}
+<!-- seu_projeto/templates/index.html -->
+{% extends 'blog/base.html' %}  # certifique-se de que o caminho está correto
+
 
 {% block title %}Página Inicial{% endblock %}
 
 {% block content %}
-    <h2>Olá, mundo!</h2>
-    <p>Este é o início do meu portfólio.</p>
+    <h2>Página Inicial</h2>
+    {% for post in posts %}
+        <div class="post">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <p><small>Criado em: {{ post.created_at }}</small></p>
+        </div>
+    {% empty %}
+        <p>Nenhum post disponível.</p>
+    {% endfor %}
 {% endblock %}
